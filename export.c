@@ -38,7 +38,7 @@ extern unsigned char *map_property_data;
 extern unsigned int *map_data, map_export_format_format, map_export_format_size;
 
 static unsigned int export_counter, export_counter_max;
-unsigned int export_selection_status, end_x, end_y, tile, export_size, edit_size_x, edit_size_y;
+unsigned int export_selection_status, end_x, end_y, tile, export_size, dim_size_x, dim_size_y;
 unsigned int map_export_selection_status, map_end_x, map_end_y, eff;
 int tile_offset, map_mode;
 
@@ -173,7 +173,9 @@ int export_tile_palette_data(char *n) {
   /* GBDK header for tile palette data */
   if (export_format_format == FORMAT_GBDK) {
     fprintf(f, "/* GBC tile palette data\n");
-    fprintf(f, "   Tile size: %d x %d\n", edit_size_x, edit_size_y);
+    fprintf(f, "   Tile size: %d x %d\n",, dim_size_x   
+  , dim_size_y
+);
     fprintf(f, "   Tiles X:   %d\n", a + 1);
     fprintf(f, "   Tiles Y:   %d\n", b + 1);
     fprintf(f, "   Tiles:     %d */\n\n", (a + 1) * (b + 1));
@@ -183,7 +185,9 @@ int export_tile_palette_data(char *n) {
 
   if (export_format_format == FORMAT_RGBDS || export_format_format == FORMAT_WLA || export_format_format == FORMAT_TASM) {
     fprintf(f, "; GBC tile palette data\n");
-    fprintf(f, "; Tile size: %d x %d\n", edit_size_x, edit_size_y);
+    fprintf(f, "; Tile size: %d x %d\n",, dim_size_x   
+  , dim_size_y
+);
     fprintf(f, "; Tiles X:   %d\n", a + 1);
     fprintf(f, "; Tiles Y:   %d\n", b + 1);
     fprintf(f, "; Tiles:     %d\n\n", (a + 1) * (b + 1));
