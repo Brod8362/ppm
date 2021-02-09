@@ -173,9 +173,7 @@ int export_tile_palette_data(char *n) {
   /* GBDK header for tile palette data */
   if (export_format_format == FORMAT_GBDK) {
     fprintf(f, "/* GBC tile palette data\n");
-    fprintf(f, "   Tile size: %d x %d\n",, dim_size_x   
-  , dim_size_y
-);
+    fprintf(f, "   Tile size: %d x %d\n", dim_size_x, dim_size_y);
     fprintf(f, "   Tiles X:   %d\n", a + 1);
     fprintf(f, "   Tiles Y:   %d\n", b + 1);
     fprintf(f, "   Tiles:     %d */\n\n", (a + 1) * (b + 1));
@@ -185,9 +183,7 @@ int export_tile_palette_data(char *n) {
 
   if (export_format_format == FORMAT_RGBDS || export_format_format == FORMAT_WLA || export_format_format == FORMAT_TASM) {
     fprintf(f, "; GBC tile palette data\n");
-    fprintf(f, "; Tile size: %d x %d\n",, dim_size_x   
-  , dim_size_y
-);
+    fprintf(f, "; Tile size: %d x %d\n", dim_size_x, dim_size_y);
     fprintf(f, "; Tiles X:   %d\n", a + 1);
     fprintf(f, "; Tiles Y:   %d\n", b + 1);
     fprintf(f, "; Tiles:     %d\n\n", (a + 1) * (b + 1));

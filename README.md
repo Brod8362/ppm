@@ -5,3 +5,5 @@ This was originally written by Ville Helin in 2000-2003. Please view it at his w
 
 I have simply fixed it so it compiles and runs with modern versions of GCC. Please view the original creator's website
 I don't have intentions on doing much to this, but who knows.
+
+There's a binary available in the [releases section.]()
